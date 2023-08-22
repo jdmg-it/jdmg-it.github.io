@@ -1,0 +1,32 @@
+---
+import { SunIcon, MoonIcon } from "../utils/icons.jsx";
+---
+
+<div
+  id="theme-switcher"
+  class="flex cursor-pointer items-center rounded-[50px] p-[0.66rem] relative gap-[1.33rem] bg-switch-bg before:content-[''] before:absolute before:w-[2.22rem] before:h-[2.22rem] before:bg-switch-circle-bg before:rounded-[50px] before:z-0 before:left-0 before:transform before:translate-x-[var(--switch-circle-pos)] before:transition-[var(--default-transition)]"
+>
+  <SunIcon />
+  <MoonIcon />
+</div>
+
+<script is:inline>
+const theme = (() => {
+  if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+      return "light";
+    }
+    return "dark";
+  })();
+  window.localStorage.setItem("theme", theme);
+  document.documentElement.setAttribute("data-theme", theme);
+  document.getElementById("theme-switcher").addEventListener("click", () => {
+    const element = document.documentElement,
+      currentTheme = element.getAttribute(`data-theme`) ?? "dark",
+      newTheme = currentTheme === "dark" ? "light" : "dark";
+    element.setAttribute("data-theme", newTheme);
+    window.localStorage.setItem("theme", newTheme);
+  });
+</script>
