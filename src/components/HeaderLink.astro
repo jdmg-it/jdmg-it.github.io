@@ -10,10 +10,10 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 const inPage = isActive ? "#" : href;
 
 const style =
-  "inline-bloc " +
+  "inline-bloc text-lg " +
   (isActive
-    ? " font-bold"
-    : "hover:text-blue-500 transition-[var(--default-transition)]");
+    ? "font-bold text-violet-900 dark:text-violet-300"
+    : "hover:text-violet-800 dark:hover:text-violet-300 transition-[var(--default-transition)]");
 ---
 
 <a href={inPage} class:list={[className, style]} {...props}>

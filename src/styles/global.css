@@ -5,7 +5,7 @@
  */
 
 :root[data-theme='light'] {
-	--page-bg: #fff;
+	--page-bg: #fefefe;
 
 	--primary-text: #3c3a47;
 	--muted-text: #b1b0b5;
@@ -59,6 +59,8 @@
 	--default-transition: color 0.3s ease-in-out,
 		background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
 		transform 0.3s ease-in-out, fill 0.3s ease-in-out;
+	--photo-transition: translate 0.13s ease-in, rotate 0.13s ease-in,
+		scale 0.13s ease-in;
 }
 
 @font-face {
