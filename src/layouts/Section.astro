@@ -1,0 +1,13 @@
+---
+interface Props {
+  sectionId?: string;
+}
+
+const { sectionId } = Astro.props;
+---
+
+<section id={sectionId}>
+  <slot />
+</section>
+
+<hr class="border-dotted" />

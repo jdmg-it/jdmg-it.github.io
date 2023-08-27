@@ -1,8 +1,8 @@
 ---
-import { GithubIcon, LinkedinIcon } from "../utils/icons";
+import { GithubIcon, LinkedInIcon, ResumeIcon } from "../utils/icons";
 ---
 
-<section class="flex flex-col sm:flex-row items-center gap-5 min-h-[50vh]">
+<section class="flex flex-col sm:flex-row items-center gap-5 py-5">
   <figure
     class="relative select-none w-44 h-44 bg-violet-200 dark:bg-violet-800/20 border-8 border-switch-bg shadow-sm shadow-violet-200 dark:shadow-violet-700 border-image overflow-hidden -rotate-1 hover:-translate-y-0.5 hover:rotate-1 transition-[var(--photo-transition)] hover:scale-[1.03]"
   >
@@ -12,7 +12,7 @@ import { GithubIcon, LinkedinIcon } from "../utils/icons";
   <div class="flex flex-col items-center sm:items-start gap-6">
     <header class="flex flex-col items-left gap-1">
       <h1
-        class="text-2xl sm:text-4xl text-center sm:text-left font-bold text-slate-600 dark:text-slate-100"
+        class="text-4xl text-center sm:text-left font-bold text-slate-600 dark:text-slate-100"
       >
         José David Montoya
       </h1>
@@ -25,15 +25,28 @@ import { GithubIcon, LinkedinIcon } from "../utils/icons";
     <div class="flex gap-3">
       <div class="relative group/tooltip">
         <a
+          href="#"
+          class="flex gap-1 px-3 pt-1 h-9 rounded-xl place-items-center text-md font-bold bg-violet-500 text-white"
+        >
+          <ResumeIcon />
+          Resume
+        </a>
+        <span
+          class="absolute pointer-events-none transition-all opacity-0 z-20 bottom-full -translate-y-0 py-1 px-1.5 text-xs left-1/2 -translate-x-1/2 rounded-md whitespace-nowrap text-gray-200 bg-gray-800 dark:bg-white dark:text-gray-700 before:content-[''] before:absolute before:bg-gray-800 before:rounded-sm before:w-2.5 before:rotate-45 before:h-2.5 before:-bottom-1 before:-z-10 before:left-1/2 before:-translate-x-1/2 before:dark:bg-white before:dark:gray-800 group-hover/tooltip:opacity-100 group-hover/tooltip:-translate-y-3 group-focus-within/tooltip:opacity-100 group-focus-within/tooltip:-translate-y-3"
+          >Download
+        </span>
+      </div>
+      <div class="relative group/tooltip">
+        <a
           href="https://www.linkedin.com/in/jose-david-montoya/"
           target="_blank"
           rel="noopener noreferrer"
-          class="px-2 h-9 rounded-xl grid place-items-center bg-[#0a66c2] fill-white"
+          class="px-2 h-9 rounded-xl grid place-items-center bg-[#0a66c2] text-white"
         >
-          <LinkedinIcon />
+          <LinkedInIcon />
         </a>
         <span
-          class="absolute pointer-events-none transition-all opacity-0 z-20 bottom-full -translate-y-0 py-1 px-1.5 text-xs left-1/2 -translate-x-1/2 rounded-md whitespace-nowrap text-gray-200 bg-gray-800 dark:bg-white dark:text-gray-700 before:content-[''] before:absolute before:bg-gray-800 before:rounded-sm before:w-2.5 before:rotate-45 before:h-2.5 before:-bottom-1 before:-z-10 before:left-1/2 before:-translate-x-1/2 before:dark:bg-white before:dark:gray-800 group-hover/tooltip:opacity-100 group-hover/tooltip:-translate-y-3"
+          class="absolute pointer-events-none transition-all opacity-0 z-20 bottom-full -translate-y-0 py-1 px-1.5 text-xs left-1/2 -translate-x-1/2 rounded-md whitespace-nowrap text-gray-200 bg-gray-800 dark:bg-white dark:text-gray-700 before:content-[''] before:absolute before:bg-gray-800 before:rounded-sm before:w-2.5 before:rotate-45 before:h-2.5 before:-bottom-1 before:-z-10 before:left-1/2 before:-translate-x-1/2 before:dark:bg-white before:dark:gray-800 group-hover/tooltip:opacity-100 group-hover/tooltip:-translate-y-3 group-focus-within/tooltip:opacity-100 group-focus-within/tooltip:-translate-y-3"
           >Linkedin
         </span>
       </div>
@@ -42,12 +55,12 @@ import { GithubIcon, LinkedinIcon } from "../utils/icons";
           href="https://github.com/jdmg-it"
           target="_blank"
           rel="noopener noreferrer"
-          class="px-2 h-9 rounded-xl grid place-items-center bg-[#171515] dark:bg-white fill-white dark:fill-[#171515] transition-[var(--default-transition)]"
+          class="px-2 h-9 rounded-xl grid place-items-center bg-[#171515] text-white"
         >
           <GithubIcon />
         </a>
         <span
-          class="absolute pointer-events-none transition-all opacity-0 z-20 bottom-full -translate-y-0 py-1 px-1.5 text-xs left-1/2 -translate-x-1/2 rounded-md whitespace-nowrap text-gray-200 bg-gray-800 dark:bg-white dark:text-gray-700 before:content-[''] before:absolute before:bg-gray-800 before:rounded-sm before:w-2.5 before:rotate-45 before:h-2.5 before:-bottom-1 before:-z-10 before:left-1/2 before:-translate-x-1/2 before:dark:bg-white before:dark:gray-800 group-hover/tooltip:opacity-100 group-hover/tooltip:-translate-y-3"
+          class="absolute pointer-events-none transition-all opacity-0 z-20 bottom-full -translate-y-0 py-1 px-1.5 text-xs left-1/2 -translate-x-1/2 rounded-md whitespace-nowrap text-gray-200 bg-gray-800 dark:bg-white dark:text-gray-700 before:content-[''] before:absolute before:bg-gray-800 before:rounded-sm before:w-2.5 before:rotate-45 before:h-2.5 before:-bottom-1 before:-z-10 before:left-1/2 before:-translate-x-1/2 before:dark:bg-white before:dark:gray-800 group-hover/tooltip:opacity-100 group-hover/tooltip:-translate-y-3 group-focus-within/tooltip:opacity-100 group-focus-within/tooltip:-translate-y-3"
           >Github
         </span>
       </div>

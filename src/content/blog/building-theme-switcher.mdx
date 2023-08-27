@@ -1,0 +1,96 @@
+---
+title: 'Building a Theme Switcher Component with HTML, CSS, and JavaScript'
+description: 'Lorem ipsum dolor sit amet'
+pubDate: 'Aug 25 2023'
+heroImage: '/blog-placeholder-1.jpg'
+---
+
+## Introduction
+
+In the modern web development landscape, creating user-friendly and visually appealing interfaces is crucial. One of the components that can enhance user experience is a theme switcher, allowing users to toggle between light and dark themes effortlessly. In this article, we'll dive into the process of creating a theme switcher component using HTML, CSS, and JavaScript.
+
+## Prerequisites
+
+To follow along with this tutorial, you should have a basic understanding of HTML, CSS, and JavaScript. Additionally, you'll need access to a code editor to implement the provided code snippets.
+
+## Setting Up the Project
+
+1. Create a new project folder on your computer.
+2. Inside the project folder, create the necessary subfolders and files:
+   - Create a folder named "utils" to store your icon components.
+   - Inside the "utils" folder, create a file named "icons.jsx" to store the icon components.
+   - Create an HTML file (e.g., index.html) for your main project.
+
+## Building the Theme Switcher Component
+
+### 1. Import Icon Components
+
+In the "icons.jsx" file, import the `SunIcon` and `MoonIcon` components from your icon library.
+
+```jsx
+// icons.jsx
+import { SunIcon, MoonIcon } from "../utils/icons.jsx";
+```
+
+### 2. Create the HTML Structure
+
+In your "index.html" file, build the HTML structure for the theme switcher component.
+
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Add necessary meta tags and stylesheets here -->
+</head>
+<body>
+  <button
+    id="theme-switcher"
+    class="flex cursor-pointer items-center rounded-[50px] p-[0.66rem] relative gap-[1.33rem] bg-switch-bg before:content-[''] before:absolute before:w-[2.22rem] before:h-[2.22rem] before:bg-switch-circle-bg before:rounded-[50px] before:z-0 before:left-0 before:transform before:translate-x-[var(--switch-circle-pos)] before:transition-[var(--default-transition)]"
+  >
+    <SunIcon />
+    <MoonIcon />
+  </button>
+
+  <script is:inline>
+    <!-- JavaScript code will go here -->
+  </script>
+</body>
+</html>
+```
+
+### 3. JavaScript Logic
+
+Within the `<script>` tag in the HTML file, add the JavaScript logic for the theme switcher.
+
+```javascript
+// JavaScript code inside the <script> tag
+const theme = (() => {
+  if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+    return localStorage.getItem("theme");
+  }
+  if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+    return "light";
+  }
+  return "dark";
+})();
+window.localStorage.setItem("theme", theme);
+document.documentElement.setAttribute("data-theme", theme);
+document.getElementById("theme-switcher").addEventListener("click", () => {
+  const element = document.documentElement,
+    currentTheme = element.getAttribute(`data-theme`) ?? "dark",
+    newTheme = currentTheme === "dark" ? "light" : "dark";
+  element.setAttribute("data-theme", newTheme);
+  window.localStorage.setItem("theme", newTheme);
+});
+```
+
+### 4. Styling with CSS
+
+Although the provided HTML includes complex classes, they are used to style the switcher. Customize these styles according to your project's design.
+
+## Conclusion
+
+Creating a theme switcher component enhances user experience by allowing them to switch between light and dark themes seamlessly. By combining HTML, CSS, and JavaScript, you can build interactive and engaging components that contribute to a more user-friendly web application. Feel free to modify the provided code to match your project's requirements and design aesthetics.
+
+---
